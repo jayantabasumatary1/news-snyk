@@ -1,0 +1,17 @@
+name: vulnerability testing for packages and code.
+on: push
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Vulnerabilities in packages
+        uses: snyk/actions/node@master
+        continue-on-error: true 
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      - name: Vulnerabilities in source code
+        uses: snyk/actions/node@master
+        continue-on-error: true 
+        with:
+          command: code test 
