@@ -63,7 +63,7 @@ h2{
 }
 :root{
     --underline_color: red;
-    --underline-hight:0.175rem;
+    --underline-hight:0.174rem;
 }
 .Hover-effect::after {
     content: "";
