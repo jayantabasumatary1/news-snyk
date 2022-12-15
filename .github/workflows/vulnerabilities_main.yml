@@ -13,5 +13,7 @@ jobs:
       - name: Vulnerabilities in source code
         uses: snyk/actions/node@master
         continue-on-error: true 
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
           command: code test 
